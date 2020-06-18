@@ -13,7 +13,7 @@ if(isset($_POST['return']))
 $rid=intval($_GET['rid']);
 $fine=$_POST['fine'];
 $rstatus=1;
-$sql="update tblissuedbookdetails set fine=:fine,RetrunStatus=:rstatus where id=:rid";
+$sql="update tblborrowedbookdetails set fine=:fine,RetrunStatus=:rstatus where id=:rid";
 $query = $dbh->prepare($sql);
 $query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->bindParam(':fine',$fine,PDO::PARAM_STR);
@@ -21,7 +21,7 @@ $query->bindParam(':rstatus',$rstatus,PDO::PARAM_STR);
 $query->execute();
 
 $_SESSION['msg']="Book Returned successfully";
-header('location:manage-issued-books.php');
+header('location:manage-borrowed-books.php');
 
 
 
@@ -34,7 +34,7 @@ header('location:manage-issued-books.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Issued Book Details</title>
+    <title>Online Library Management System | Borrowed Book Details</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -93,7 +93,7 @@ error:function (){}
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Issued Book Details</h4>
+                <h4 class="header-line">Borrowed Book Details</h4>
                 
                             </div>
 
@@ -102,13 +102,13 @@ error:function (){}
 <div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Issued Book Details
+Borrowed Book Details
 </div>
 <div class="panel-body">
 <form role="form" method="post">
 <?php 
 $rid=intval($_GET['rid']);
-$sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid,tblissuedbookdetails.fine,tblissuedbookdetails.RetrunStatus from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId where tblissuedbookdetails.id=:rid";
+$sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblborrowedbookdetails.IssuesDate,tblborrowedbookdetails.ReturnDate,tblborrowedbookdetails.id as rid,tblborrowedbookdetails.fine,tblborrowedbookdetails.RetrunStatus from  tblborrowedbookdetails join tblstudents on tblstudents.StudentId=tblborrowedbookdetails.StudentId join tblbooks on tblbooks.id=tblborrowedbookdetails.BookId where tblborrowedbookdetails.id=:rid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->execute();
@@ -139,7 +139,7 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>Book Issued Date :</label>
+<label>Book Borrowed Date :</label>
 <?php echo htmlentities($result->IssuesDate);?>
 </div>
 
