@@ -18,7 +18,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Manage Issued Books</title>
+    <title>Online Library Management System | Manage Borrowed Books</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -39,7 +39,7 @@ else{
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Issued Books</h4>
+                <h4 class="header-line">Manage Borrowed Books</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")
@@ -85,7 +85,7 @@ else{
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Issued Books 
+                          Borrowed Books 
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -96,13 +96,13 @@ else{
                                             <th>Student Name</th>
                                             <th>Book Name</th>
                                             <th>ISBN </th>
-                                            <th>Issued Date</th>
+                                            <th>Borrowed Date</th>
                                             <th>Return Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php $sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId order by tblissuedbookdetails.id desc";
+<?php $sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblborrowedbookdetails.IssuesDate,tblborrowedbookdetails.ReturnDate,tblborrowedbookdetails.id as rid from  tblborrowedbookdetails join tblstudents on tblstudents.StudentId=tblborrowedbookdetails.StudentId join tblbooks on tblbooks.id=tblborrowedbookdetails.BookId order by tblborrowedbookdetails.id desc";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

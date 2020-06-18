@@ -12,7 +12,7 @@ if(isset($_POST['issue']))
 {
 $studentid=strtoupper($_POST['studentid']);
 $bookid=$_POST['bookdetails'];
-$sql="INSERT INTO  tblissuedbookdetails(StudentID,BookId) VALUES(:studentid,:bookid)";
+$sql="INSERT INTO  tblborrowedbookdetails(StudentID,BookId) VALUES(:studentid,:bookid)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':studentid',$studentid,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
@@ -20,13 +20,13 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$_SESSION['msg']="Book issued successfully";
-header('location:manage-issued-books.php');
+$_SESSION['msg']="Book borrowed successfully";
+header('location:manage-borrowed-books.php');
 }
 else 
 {
 $_SESSION['error']="Something went wrong. Please try again";
-header('location:manage-issued-books.php');
+header('location:manage-borrowed-books.php');
 }
 
 }

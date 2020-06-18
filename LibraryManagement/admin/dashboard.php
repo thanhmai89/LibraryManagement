@@ -66,15 +66,15 @@ $listdbooks=$query->rowCount();
                       <div class="alert alert-info back-widget-set text-center">
                             <i class="fa fa-bars fa-5x"></i>
 <?php 
-$sql1 ="SELECT id from tblissuedbookdetails ";
+$sql1 ="SELECT id from tblborrowedbookdetails ";
 $query1 = $dbh -> prepare($sql1);
 $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
-$issuedbooks=$query1->rowCount();
+$borrowedbooks=$query1->rowCount();
 ?>
 
-                            <h3><?php echo htmlentities($issuedbooks);?> </h3>
-                           Times Book Issued
+                            <h3><?php echo htmlentities($borrowedbooks);?> </h3>
+                           Times Book Borrowed
                         </div>
                     </div>
              
@@ -83,7 +83,7 @@ $issuedbooks=$query1->rowCount();
                             <i class="fa fa-recycle fa-5x"></i>
 <?php 
 $status=1;
-$sql2 ="SELECT id from tblissuedbookdetails where RetrunStatus=:status";
+$sql2 ="SELECT id from tblborrowedbookdetails where RetrunStatus=:status";
 $query2 = $dbh -> prepare($sql2);
 $query2->bindParam(':status',$status,PDO::PARAM_STR);
 $query2->execute();

@@ -123,10 +123,10 @@ INSERT INTO `tblcategory` (`id`, `CategoryName`, `Status`, `CreationDate`, `Upda
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tblissuedbookdetails`
+-- Cấu trúc bảng cho bảng `tblborrowedbookdetails`
 --
 
-CREATE TABLE `tblissuedbookdetails` (
+CREATE TABLE `tblborrowedbookdetails` (
   `id` int(11) NOT NULL,
   `BookId` int(11) DEFAULT NULL,
   `StudentID` varchar(150) DEFAULT NULL,
@@ -137,10 +137,10 @@ CREATE TABLE `tblissuedbookdetails` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tblissuedbookdetails`
+-- Đang đổ dữ liệu cho bảng `tblborrowedbookdetails`
 --
 
-INSERT INTO `tblissuedbookdetails` (`id`, `BookId`, `StudentID`, `IssuesDate`, `ReturnDate`, `RetrunStatus`, `fine`) VALUES
+INSERT INTO `tblborrowedbookdetails` (`id`, `BookId`, `StudentID`, `IssuesDate`, `ReturnDate`, `RetrunStatus`, `fine`) VALUES
 (1, 1, 'SID002', '2020-06-14 06:09:47', '2020-06-14 11:15:20', 1, 0),
 (2, 1, 'SID005', '2020-06-10 06:12:27', '2020-06-10 11:15:23', 1, 5),
 (3, 3, 'SID011', '2020-06-14 06:13:40', NULL, 0, NULL),
@@ -206,9 +206,9 @@ ALTER TABLE `tblcategory`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tblissuedbookdetails`
+-- Chỉ mục cho bảng `tblborrowedbookdetails`
 --
-ALTER TABLE `tblissuedbookdetails`
+ALTER TABLE `tblborrowedbookdetails`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -247,9 +247,9 @@ ALTER TABLE `tblcategory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `tblissuedbookdetails`
+-- AUTO_INCREMENT cho bảng `tblborrowedbookdetails`
 --
-ALTER TABLE `tblissuedbookdetails`
+ALTER TABLE `tblborrowedbookdetails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
