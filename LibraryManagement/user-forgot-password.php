@@ -140,10 +140,21 @@ if (isset($_POST['change'])) {
 	</div>
   <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php'); ?>
-  <!-- FOOTER SECTION END-->
-  <script src="assets/js/jquery-1.10.2.js"></script>
-  <!-- BOOTSTRAP SCRIPTS  -->
-  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
   <!-- CUSTOM SCRIPTS  -->
   <script src="assets/js/custom.js"></script>
 
