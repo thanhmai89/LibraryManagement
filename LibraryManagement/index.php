@@ -40,12 +40,20 @@ if (isset($_POST['login'])) {
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>Online Library Management System | </title>
-  <!-- BOOTSTRAP CORE STYLE  -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet" />
-  <!-- FONT AWESOME STYLE  -->
-  <link href="assets/css/font-awesome.css" rel="stylesheet" />
-  <!-- CUSTOM STYLE  -->
-  <link href="assets/css/style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="assets/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
   <!-- GOOGLE FONT -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -55,55 +63,82 @@ if (isset($_POST['login'])) {
   <!------MENU SECTION START-->
   <?php include('includes/header.php'); ?>
   <!-- MENU SECTION END-->
-  <div class="content-wrapper">
-    <div class="container">
-      <div class="row pad-botm">
-        <div class="col-md-12">
-          <h4 class="header-line">USER LOGIN FORM</h4>
-        </div>
-      </div>
+  <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="assets/img/img-01.png" alt="IMG">
+				</div>
 
-      <!--LOGIN PANEL START-->
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              LOGIN FORM
+				<form class="login100-form validate-form" role="form" method="post">
+					<span class="login100-form-title">
+						Student Login
+					</span>
+					<div class="panel-heading">
+						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+							<input class="input100" type="text" name="emailid" required autocomplete="off"  placeholder="Email">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div class="wrap-input100 validate-input" data-validate = "Password is required">
+							<input class="input100" type="password" name="password" placeholder="Password">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
+						</div>
+						
+						<div class="container-login100-form-btn">
+							<button class="login100-form-btn" type="submit" name="login">
+								Login
+							</button>
+						</div>
+
+						<div class="text-center p-t-12">
+							<span class="txt1">
+								Forgot
+							</span>
+							<a class="txt2" href="user-forgot-password.php">
+								Username / Password?
+							</a>
             </div>
-            <div class="panel-body">
-              <form role="form" method="post">
+            <div class="text-center p-t-12">
+							<a class="txt2" href="adminlogin.php">
+								Admin?
+							</a>
+						</div>
 
-                <div class="form-group">
-                  <label>Enter Email id</label>
-                  <input class="form-control" type="text" name="emailid" required autocomplete="off" />
-                </div>
-                <div class="form-group">
-                  <label>Password</label>
-                  <input class="form-control" type="password" name="password" required autocomplete="off" />
-                  <p class="help-block"><a href="user-forgot-password.php">Forgot Password</a></p>
-                </div>
-
-                <!-- <div class="form-group">
-                  <label>Verification code : </label>
-                  <input type="text" class="form-control1" name="vercode" maxlength="5" autocomplete="off" required style="height:25px;" />&nbsp;<img src="captcha.php">
-                </div> -->
-
-                <button type="submit" name="login" class="btn btn-info">LOGIN </button> | <a href="signup.php">Not Register Yet</a>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!---LOGIN PABNEL END-->
-
-    </div>
-  </div>
+						<div class="text-center p-t-136">
+							<a class="txt2" href="signup.php">
+								Create your Account
+								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							</a>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
   <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php'); ?>
   <!-- FOOTER SECTION END-->
-  <script src="assets/js/jquery-1.10.2.js"></script>
-  <!-- BOOTSTRAP SCRIPTS  -->
-  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
   <!-- CUSTOM SCRIPTS  -->
   <script src="assets/js/custom.js"></script>
 
