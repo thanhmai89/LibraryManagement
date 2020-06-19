@@ -39,12 +39,20 @@ if (isset($_POST['change'])) {
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>Online Library Management System | Password Recovery </title>
-  <!-- BOOTSTRAP CORE STYLE  -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet" />
-  <!-- FONT AWESOME STYLE  -->
-  <link href="assets/css/font-awesome.css" rel="stylesheet" />
-  <!-- CUSTOM STYLE  -->
-  <link href="assets/css/style.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="assets/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
   <!-- GOOGLE FONT -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
   <script type="text/javascript">
@@ -64,60 +72,72 @@ if (isset($_POST['change'])) {
   <!------MENU SECTION START-->
   <?php include('includes/header.php'); ?>
   <!-- MENU SECTION END-->
-  <div class="content-wrapper">
-    <div class="container">
-      <div class="row pad-botm">
-        <div class="col-md-12">
-          <h4 class="header-line">User Password Recovery</h4>
-        </div>
-      </div>
+  <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="assets/img/img-01.png" alt="IMG">
+				</div>
 
       <!--LOGIN PANEL START-->
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              LOGIN FORM
+      <form class="login100-form validate-form" nrole="form" name="chngpwd" method="post" onSubmit="return valid();">
+					<span class="login100-form-title">
+						Change Password
+					</span>
+					<div class="panel-heading">
+						<div class="wrap-input100 validate-input">
+							<input class="input100" type="email" name="email" required autocomplete="off" required placeholder="Registered Email" />
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</span>
+						</div>
+
+            <div class="wrap-input100 validate-input">
+							<input class="input100" type="text" type="text" name="mobile" autocomplete="off" placeholder="Mobile" required />
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+							</span>
             </div>
-            <div class="panel-body">
-              <form role="form" name="chngpwd" method="post" onSubmit="return valid();">
 
-                <div class="form-group">
-                  <label>Enter RegisterEmail id</label>
-                  <input class="form-control" type="email" name="email" required autocomplete="off" />
-                </div>
-
-                <div class="form-group">
-                  <label>Enter RegisterMobile No</label>
-                  <input class="form-control" type="text" name="mobile" required autocomplete="off" />
-                </div>
-
-                <div class="form-group">
-                  <label>Password</label>
-                  <input class="form-control" type="password" name="newpassword" required autocomplete="off" />
-                </div>
-
-                <div class="form-group">
-                  <label>ConfirmPassword</label>
-                  <input class="form-control" type="password" name="confirmpassword" required autocomplete="off" />
-                </div>
-
-                <div class="form-group">
-                  <label>Verification code : </label>
-                  <input type="text" class="form-control1" name="vercode" maxlength="5" autocomplete="off" required style="height:25px;" />&nbsp;<img src="captcha.php">
-                </div>
-
-                <button type="submit" name="change" class="btn btn-info">Change Password</button> | <a href="index.php">Login</a>
-              </form>
+            <div class="wrap-input100 validate-input">
+							<input class="input100" type="password" name="newpassword" autocomplete="off" placeholder="Password" required />
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
             </div>
-          </div>
-        </div>
-      </div>
-      <!---LOGIN PABNEL END-->
+            
+            <div class="wrap-input100 validate-input">
+							<input class="input100" type="password" name="confirmpassword" autocomplete="off" placeholder="Confirm Password" required />
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
+            </div>
 
+            <div class="wrap-input100 validate-input">
+              <input class="input100" type="text" name="vercode" maxlength="5" autocomplete="off" placeholder="Verification Code" required  />&nbsp;<br><img src="captcha.php">
+              <span class="focus-input100"></span>
+            </div>
 
-    </div>
-  </div>
+            <div class="container-login100-form-btn">
+							<button class="login100-form-btn" type="submit" name="change" class="btn btn-danger" id="submit">
+								Change password
+							</button>
+            </div>
+
+            <div class="text-center p-t-136">
+							<a class="txt2" href="index.php">
+								Login
+								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							</a>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
   <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php'); ?>
   <!-- FOOTER SECTION END-->
