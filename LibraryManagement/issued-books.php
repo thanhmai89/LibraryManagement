@@ -74,7 +74,7 @@ if (strlen($_SESSION['login']) == 0) {
                                             <tbody>
                                                 <?php
                                                 $sid = $_SESSION['stdid'];
-                                                $sql = "SELECT tblbooks.BookName,tblbooks.ISBNNumber,tblborrowedbookdetails.IssuesDate,tblborrowedbookdetails.ReturnDate,tblborrowedbookdetails.id as rid,tblborrowedbookdetails.fine from  tblborrowedbookdetails join tblstudents on tblstudents.StudentId=tblborrowedbookdetails.StudentId join tblbooks on tblbooks.id=tblborrowedbookdetails.BookId where tblstudents.StudentId=:sid order by tblborrowedbookdetails.id desc";
+                                                $sql = "SELECT tblbooks.BookName,tblbooks.ISBNNumber,tblborrowedbookdetails.BorrowsDate,tblborrowedbookdetails.ReturnDate,tblborrowedbookdetails.id as rid,tblborrowedbookdetails.fine from  tblborrowedbookdetails join tblstudents on tblstudents.StudentId=tblborrowedbookdetails.StudentId join tblbooks on tblbooks.id=tblborrowedbookdetails.BookId where tblstudents.StudentId=:sid order by tblborrowedbookdetails.id desc";
                                                 $query = $dbh->prepare($sql);
                                                 $query->bindParam(':sid', $sid, PDO::PARAM_STR);
                                                 $query->execute();
@@ -86,7 +86,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                             <td class="center"><?php echo htmlentities($cnt); ?></td>
                                                             <td class="center"><?php echo htmlentities($result->BookName); ?></td>
                                                             <td class="center"><?php echo htmlentities($result->ISBNNumber); ?></td>
-                                                            <td class="center"><?php echo htmlentities($result->IssuesDate); ?></td>
+                                                            <td class="center"><?php echo htmlentities($result->BorrowsDate); ?></td>
                                                             <td class="center"><?php if ($result->ReturnDate == "") { ?>
                                                                     <span style="color:red">
                                                                         <?php echo htmlentities("Not Return Yet"); ?>

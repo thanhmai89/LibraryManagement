@@ -17,7 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
 -- Cơ sở dữ liệu: `library`
 --
 
@@ -130,7 +129,7 @@ CREATE TABLE `tblborrowedbookdetails` (
   `id` int(11) NOT NULL,
   `BookId` int(11) DEFAULT NULL,
   `StudentID` varchar(150) DEFAULT NULL,
-  `IssuesDate` timestamp NULL DEFAULT current_timestamp(),
+  `BorrowsDate` timestamp NULL DEFAULT current_timestamp(),
   `ReturnDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `RetrunStatus` int(1) DEFAULT NULL,
   `fine` int(11) DEFAULT NULL
@@ -140,7 +139,7 @@ CREATE TABLE `tblborrowedbookdetails` (
 -- Đang đổ dữ liệu cho bảng `tblborrowedbookdetails`
 --
 
-INSERT INTO `tblborrowedbookdetails` (`id`, `BookId`, `StudentID`, `IssuesDate`, `ReturnDate`, `RetrunStatus`, `fine`) VALUES
+INSERT INTO `tblborrowedbookdetails` (`id`, `BookId`, `StudentID`, `BorrowsDate`, `ReturnDate`, `RetrunStatus`, `fine`) VALUES
 (1, 1, 'SID002', '2020-06-14 06:09:47', '2020-06-14 11:15:20', 1, 0),
 (2, 1, 'SID005', '2020-06-10 06:12:27', '2020-06-10 11:15:23', 1, 5),
 (3, 3, 'SID011', '2020-06-14 06:13:40', NULL, 0, NULL),
