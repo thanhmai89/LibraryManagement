@@ -50,9 +50,9 @@
                             </li>
 
                            <li>
-                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Issue Books <i class="fa fa-angle-down"></i></a>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Borrow Books <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="issue-book.php">Issue New Book</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="borrow-book.php">Borrow New Book</a></li>
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="manage-borrowed-books.php">Manage Borrowed Books</a></li>
                                 </ul>
                             </li>
