@@ -76,7 +76,7 @@ if (isset($_POST['change'])) {
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="assets/img/img-01.png" alt="IMG">
+					<img src="assets/img/img-02.png" alt="IMG">
 				</div>
 
       <!--LOGIN PANEL START-->
