@@ -146,10 +146,6 @@ if (isset($_POST['signup'])) {
 							</span>
             </div>
             
-            <div class="wrap-input100 validate-input">
-              <input class="input100" type="text" name="vercode" maxlength="5" autocomplete="off" placeholder="Verification Code" required  />&nbsp;<br><img src="captcha.php">
-              <span class="focus-input100"></span>
-            </div>
 						
 						<div class="container-login100-form-btn">
 							<button class="login100-form-btn" type="submit" name="signup" class="btn btn-danger" id="submit">
