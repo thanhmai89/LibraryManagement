@@ -18,8 +18,6 @@ if (strlen($_SESSION['alogin']) == 0) {
         header('location:reg-students.php');
     }
 
-
-
     //code for active students
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
