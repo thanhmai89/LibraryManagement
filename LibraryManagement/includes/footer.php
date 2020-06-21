@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                   &copy;Online Library Management System |<a href="https://github.com/7on9" target="_blank"  > Designed by : LongNguyen</a> 
+                   &copy;Online Library Management System |<a href="https://github.com/thanhmai89" target="_blank"  > Designed by: Thanh Mai</a> 
                 </div>
 
             </div>
